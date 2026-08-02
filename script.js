@@ -50,3 +50,19 @@ tl.from(".navbar-wrapper",{
     opacity:0,
     duration:.6
 },"-=.5");
+
+gsap.to(".hero-photo",{
+
+    y:90,
+
+    ease:"none",
+
+    scrollTrigger:{
+        trigger:".hero",
+        start:"top top",
+        end:"bottom top",
+
+        scrub:true
+    }
+
+});
