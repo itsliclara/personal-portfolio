@@ -43,6 +43,47 @@ h3 {
 
     border-bottom: 1px solid #e7d3b5;
 }
+.navbar {
+  width: 100%;
+  height: 68px;
+  padding: 0 7.5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #faf7f2;
+  border-top: 1px solid #8f8375;
+  border-bottom: 1px solid #eee6dc;
+
+  box-sizing: border-box;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #8b6b3f;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  color: #766d64;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: #b18448;
+}
 
 .logo {
     color: #c79c5a;
