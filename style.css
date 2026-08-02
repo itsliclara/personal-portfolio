@@ -43,68 +43,81 @@ h3 {
 
     border-bottom: 1px solid #e7d3b5;
 }
+.navbar-wrapper {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    padding: 0 7%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
 .navbar {
-  width: 100%;
-  height: 68px;
-  padding: 0 7.5%;
+    max-width: 1280px;
+    height: 68px;
+    margin: 0 auto;
+    padding: 0 28px;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  background-color: #faf7f2;
-  border-top: 1px solid #8f8375;
-  border-bottom: 1px solid #eee6dc;
+    background: rgba(255, 252, 247, 0.78);
+    border: 1px solid rgba(142, 112, 72, 0.14);
+    border-radius: 22px;
 
-  box-sizing: border-box;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 10px 35px rgba(76, 58, 38, 0.08);
+
+    box-sizing: border-box;
 }
 
 .logo {
-  font-family: Georgia, serif;
-  font-size: 20px;
-  font-weight: 600;
-  color: #8b6b3f;
-  text-decoration: none;
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: #9a7441;
+    text-decoration: none;
 }
 
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
+    display: flex;
+    align-items: center;
+    gap: 34px;
 }
 
 .nav-links a {
-  color: #766d64;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 500;
-  transition: 0.25s ease;
+    position: relative;
+    color: #75695e;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1.5px;
+
+    background: #b8894d;
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #b18448;
+    color: #a7783e;
 }
 
-.logo {
-    color: #c79c5a;
-    font-size: 28px;
-    font-weight: 700;
-}
-
-.navbar nav {
-    display: flex;
-    gap: 28px;
-}
-
-.navbar a {
-    color: #7e7368;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.navbar a:hover {
-    color: #c79c5a;
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* =========================
@@ -112,6 +125,7 @@ h3 {
 ========================= */
 
 .hero {
+    padding-top: 130px;
     min-height: 88vh;
     padding:120px 10%;
 
