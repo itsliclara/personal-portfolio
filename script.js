@@ -66,3 +66,43 @@ gsap.to(".hero-photo",{
     }
 
 });
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".hero-content", {
+    y: -80,
+    opacity: 0.35,
+    ease: "none",
+
+    scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1
+    }
+});
+
+gsap.to(".hero-photo", {
+    y: 100,
+    scale: 0.92,
+    ease: "none",
+
+    scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1
+    }
+});
+
+gsap.to(".badge", {
+    y: 45,
+    opacity: 0,
+    ease: "none",
+
+    scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "70% top",
+        scrub: 1
+    }
+});
