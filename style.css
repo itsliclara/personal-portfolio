@@ -85,6 +85,19 @@ h3 {
         ),
         #fbf8f3;
 }
+.hero{
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:70px;
+
+    padding:120px 8%;
+}
 
 .hero-text {
     width: 100%;
