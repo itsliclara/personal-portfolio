@@ -51,23 +51,6 @@ tl.from(".navbar-wrapper",{
     duration:.6
 },"-=.5");
 
-gsap.to(".hero-photo",{
-
-    y:90,
-
-    ease:"none",
-
-    scrollTrigger:{
-        trigger:".hero",
-        start:"top top",
-        end:"bottom top",
-
-        scrub:true
-    }
-
-});
-gsap.registerPlugin(ScrollTrigger);
-
 gsap.to(".hero-content", {
     y: -80,
     opacity: 0.35,
@@ -106,3 +89,41 @@ gsap.to(".badge", {
         scrub: 1
     }
 });
+
+// GitHub API — load projects dynamically
+async function loadProjects() {
+    const grid = document.getElementById('projects-grid');
+    const username = 'itsliclara';
+
+    try {
+        const res = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
+        const repos = await res.json();
+
+        grid.innerHTML = '';
+
+        const filtered = repos.filter(repo => !repo.fork && repo.name !== 'personal-portfolio');
+
+        if (filtered.length === 0) {
+            grid.innerHTML = '<p>No projects yet. Check back soon!</p>';
+            return;
+        }
+
+        filtered.forEach(repo => {
+            const card = document.createElement('article');
+            card.className = 'project-card';
+            card.innerHTML = `
+                <h3>${repo.name.replace(/-/g, ' ')}</h3>
+                <p>${repo.description || 'No description yet.'}</p>
+                <a href="${repo.homepage || repo.html_url}" target="_blank">
+                    View Project
+                </a>
+            `;
+            grid.appendChild(card);
+        });
+
+    } catch (err) {
+        grid.innerHTML = '<p>Could not load projects. Try again later.</p>';
+    }
+}
+
+loadProjects();
