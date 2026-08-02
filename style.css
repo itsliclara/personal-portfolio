@@ -99,6 +99,18 @@ h3 {
     padding:120px 8%;
 }
 
+.hero-photo{
+    width: 360px;
+    height: 480px;
+
+    object-fit: cover;
+
+    border-radius: 28px;
+
+    box-shadow: 0 25px 60px rgba(0,0,0,.15);
+
+    transition: .4s;
+}
 .hero-text {
     width: 100%;
     max-width: 700px;
